@@ -1,8 +1,8 @@
 var config = {
-  database: 'test',
+  database: 'douyin',
   dialect: 'mysql',
   username: 'root',
-  password: '123456',
+  password: '1qaz2wsx',
   host: 'localhost',
   port: 3306
 }
