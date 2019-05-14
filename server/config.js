@@ -1,8 +1,8 @@
 var config = {
-  database: 'douyin',
+  database: 'sql_51qiezi_vip',
   dialect: 'mysql',
-  username: 'root',
-  password: '123456',
+  username: 'sql_51qiezi_vip',
+  password: 'smBNdK7et4mM2MRC',
   host: 'localhost',
   port: 3306
 }
