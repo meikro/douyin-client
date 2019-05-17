@@ -237,9 +237,9 @@ module.exports = {
     if (!user) {
       throw new APIError('user:not_existed', 'user not found by eamil.')
     } else {
-      if (!regCoverUrl.test(videoInfo.videoCover) || !regVideoUrl.test(videoInfo.videoPath)) {
-        throw new APIError('video:format_error', 'video path/cover url format invalid.')
-      } else {
+      // if (!regCoverUrl.test(videoInfo.videoCover) || !regVideoUrl.test(videoInfo.videoPath)) {
+      //   throw new APIError('video:format_error', 'video path/cover url format invalid.')
+      // } else {
         videoInfo.userId = user.userId
         let r = await VideoInfo.create(videoInfo)
         await redisClient.zadd(KEY_LIKE_NUM, 0, videoInfo.videoId)
@@ -247,7 +247,7 @@ module.exports = {
         await redisClient.zadd(KEY_WATCH_NUM, 0, videoInfo.videoId)
         await redisClient.zadd(KEY_COMMENT_NUM, 0, videoInfo.videoId)
         ctx.rest(r)
-      }
+      // }
     }
   },
   'POST /api/admin/delVideo': async (ctx, next) => {
